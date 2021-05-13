@@ -57,3 +57,13 @@ steps:
   inputs:
     WebSiteName: 'devopsapi1'
     Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+
+- task: IISWebAppManagementOnMachineGroup@0
+  inputs:
+    IISDeploymentType: 'IISWebsite'
+    ActionIISWebsite: 'CreateOrUpdateWebsite'
+    WebsiteName: 'devopsapi1'
+    WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
+    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+    AddBinding: true
+    Bindings: '*:8888'
