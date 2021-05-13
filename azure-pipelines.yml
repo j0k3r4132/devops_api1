@@ -61,5 +61,5 @@ steps:
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
-    Bindings: 'http/All Unassigned:8888:'
+    Bindings: '{"bindings":[{"protocol":"http","ipAddress":"AllUnassigned","port":"8888","hostname":"","sslThumbprint":"","sniFlag":false}]}'
     Port: '8888'
