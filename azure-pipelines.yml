@@ -66,4 +66,5 @@ steps:
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
-    Bindings: '*:8888'    
+    Bindings: 'http/All Unassigned:8888:'
+    Port: '8888'
