@@ -52,3 +52,8 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifactName: 'devopsapi1'
     publishLocation: 'pipeline'
+
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'devopsapi1'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
