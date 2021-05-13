@@ -53,11 +53,6 @@ steps:
     artifactName: 'devopsapi1'
     publishLocation: 'pipeline'
 
-- task: IISWebAppDeploymentOnMachineGroup@0
-  inputs:
-    WebSiteName: 'devopsapi1'
-    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
-
 - task: IISWebAppManagementOnMachineGroup@0
   inputs:
     IISDeploymentType: 'IISWebsite'
