@@ -62,4 +62,3 @@ steps:
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
     Bindings: '{"bindings":[{"protocol":"http","ipAddress":"AllUnassigned","port":"8888","hostname":"","sslThumbprint":"","sniFlag":false}]}'
-    Port: '8888'
