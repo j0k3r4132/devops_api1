@@ -24,7 +24,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="devopsapi1"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -47,4 +47,11 @@ steps:
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
-    Bindings: '{"bindings":[{"protocol":"http","ipAddress":"AllUnassigned","port":"8888","hostname":"","sslThumbprint":"","sniFlag":false}]}'
+    Bindings: '{"bindings":[{"protocol":"http","ipAddress":"*","port":"8888","sslThumbprint":"","sniFlag":false}]}'
+    
+- task: IISWebAppManagementOnMachineGroup@0
+  inputs:
+    IISDeploymentType: 'IISWebsite'
+    ActionIISWebsite: 'StartWebsite'
+    StartStopWebsiteName: 'devopsapi1'
+
