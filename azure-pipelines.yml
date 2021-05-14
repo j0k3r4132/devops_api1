@@ -43,13 +43,6 @@ steps:
   inputs:
     advance: true
 
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'Sonarqube'
-    scannerMode: 'CLI'
-    configMode: 'file'
-
-- task: SonarQubeAnalyze@4
 
 - task: IISWebAppManagementOnMachineGroup@0
   inputs:
