@@ -39,6 +39,11 @@ steps:
     artifactName: 'devopsapi1'
     publishLocation: 'pipeline'
 
+- task: WhiteSource Bolt@20
+  inputs:
+    advance: true
+
+
 - task: IISWebAppManagementOnMachineGroup@0
   inputs:
     IISDeploymentType: 'IISWebsite'
