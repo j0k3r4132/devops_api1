@@ -20,7 +20,7 @@ namespace devops_api1.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var response = $"{Assembly.GetExecutingAssembly().GetName()} {Assembly.GetExecutingAssembly().ImageRuntimeVersion} {DateTime.UtcNow:F}";
+            var response = $"Production branch {DateTime.UtcNow:F}";
             
             return new ObjectResult(response);
         }
